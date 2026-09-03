@@ -82,17 +82,29 @@ mutate(df_mtcars, make = v_make)
 # - `mpg` is less than 20 AND  
 # - `disp` is greater than 200  
 # Assign the result to `df_subset`.
-filter(df_mtcars, mpg < 20 & disp > 200)
+df_subset <- filter(df_mtcars, mpg < 20 & disp > 200)
+
 # 12: Count how many car makes meet the above conditions (Q11).
 # Apply `nrow()` to `df_subset`. Use ?nrow() for the usage of nrow() function.
+nrow(df_subset)
 
 # 13: Repeat Q11 and Q12 in a single pipeline (with %>%), and assign the result to `n_make`.
+n_make <- df_subset %>% 
+  filter(df_mtcars, mpg < 20 & disp > 200)
+nrow()
 
 # 14: Convert the `cyl` column from numeric to factor using `factor()`.  
 # Add it to `df_mtcars` as a new column named `f_cyl` using `mutate()` function.
 # Use ?factor() for the usage of factor() function.
+filter( )
+
 
 # 15: Draw a box plot showing car weight (`wt`) for each number of cylinders (`f_cyl`).
+df_subset %>% 
+  ggplot(aes(x = wt,
+             y = cyl)) +
+  geom_boxplot()
+
 
 # 16: Calculate the average car weight (`wt`) separately for each number of cylinders (`cyl`).
 # Hint - `group_by()` and `summarize()` functions.
