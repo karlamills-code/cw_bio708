@@ -8,7 +8,8 @@ library(tidyverse)
 ##for example x = 15.1, 24.2, 35.4, 23.4, n)
 ##arithmetic mean used in a spatial analysis + good stats with normal distribution data but sensitive to outliers
 ##geometric used for temporal
-##median mean used for ?????
+##arith + geom converges 
+##median mean used for when data has outliers
 
 x <- c(15.9, 15.1, 21.9, 13.3, 24.4)
 y <- c(15.9, 15.1, 21.9, 53.3, 24.4)
@@ -33,7 +34,6 @@ mu_xge <- prod(x)^(1/length(x))
 exp(sum(log(x)) / length(x))
 
 (mu_y_ge <- exp(sum(log(y))/ length(y)))
-##ask why my y is the same exact value as x in geomean
 
 #median
 med_x <- median(x)
@@ -95,7 +95,7 @@ mycv <- function(v) {
 }
 
 mycv(x)
-#we used a different calculation is SE
+##we used a different calculation is SE
 ##you can skip writing the script over n over by using function
 ##cause it did it internally rather than externally showing each process
 ##people will write it as a function and make it a package bundle and then release it to the public
