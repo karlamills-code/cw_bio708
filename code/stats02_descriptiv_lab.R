@@ -47,10 +47,10 @@ head(w)
 
 m <- c(w*1000)
 
-sd_w <- sqrt(sum(w - mean(w)^2) / length(w))
+sd_w <- sqrt(sum((w - mean(w))^2) / length(w))
 mad_w <- median(abs(w - median(w)))
 
-sd_m <- sqrt(sum(m - mean(m)^2) / length(m))
+sd_m <- sqrt(sum((m - mean(m))^2) / length(m))
 mad_m <- median(abs(m - median(m)))
 
 #CV and MAD/Median for w and m
