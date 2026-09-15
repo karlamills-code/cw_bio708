@@ -35,7 +35,7 @@ ztibbl %>%
 zrevtibbl <- tibble(z_rev) 
 
 ztibbl %>% 
-  ggplot(mapping = aes(x = z)) +
+  ggplot(mapping = aes(x = z_rev)) +
   geom_histogram()+
   geom_vline(xintercept = zrevarith, color = "red") +
   geom_vline(xintercept = zrevgeom, color = "green") +
