@@ -96,7 +96,7 @@ nrow()
 # 14: Convert the `cyl` column from numeric to factor using `factor()`.  
 # Add it to `df_mtcars` as a new column named `f_cyl` using `mutate()` function.
 # Use ?factor() for the usage of factor() function.
-filter( )
+factor(cyl)
 
 
 # 15: Draw a box plot showing car weight (`wt`) for each number of cylinders (`f_cyl`).
