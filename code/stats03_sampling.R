@@ -67,7 +67,9 @@ for (i in 1:1000) {
   mu_i[i] <- mean(df_i$height)
   
   ##variance for subset
-  var_i[i] <- ((df_i$height - mu_i[i])^2 /nrow(df_i))  
+  
+  var_i[i] <- sum((df_i$height - mu_i[i])^2) /nrow(df_i)
+  
   #if you don't put [i] then it wont say which element this individual element for the mean will be
   #for example mu_i1 it will assign, mu_i2, etc 
 }
@@ -132,4 +134,4 @@ gvar_ub_hor <- g_var_ub + g_var
 gvar_ub_ver <- g_var_ub / g_var
 
 #Dr.Terui's ver of patchwork
-g_var <- g_var + scale_x_conntinuous(limits = c(0:80)
+g_var_Terui_vert <- g_mu / g_var / g_var_ub
